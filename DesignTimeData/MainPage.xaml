@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="DesignTimeData.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.peosupersajts.com/xamlmorph"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:design="using:DesignTimeData.Design"
+    mc:Ignorable="d dx">
+
+    <Grid Background="{StaticResource AppBarBackgroundThemeBrush}" dx:Remove="d:IsHidden d:DesignHeight DataContext"
+          d:DesignWidth="123">
+
+        <d:Grid.DesignHeight>738</d:Grid.DesignHeight>
+        <Grid.DataContext>
+            <design:DesignMainVM Test="Some other string2">
+            </design:DesignMainVM>
+        </Grid.DataContext>
+        <TextBlock dx:Remove="d:IsHidden"  Text="SomeStuff">
+            <d:TextBlock.IsHidden>True</d:TextBlock.IsHidden>
+        </TextBlock>
+        <TextBlock Text="{Binding Test}" dx:Remove="this"/>
+        <ListView ItemsSource="{Binding VMs}"/>
+    </Grid>
+</Page>
